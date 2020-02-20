@@ -1,4 +1,4 @@
-package main.java.itxfpc.model;
+package itxfpc.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,27 +34,44 @@ public class Fibonacci {
         return this.sequenceLength;
     }
 
-    public List<Integer> getFibonacciSequence(){
+    public void setFibonacciSequence(ArrayList<Integer> fibonacciSequence) {
+        this.fibonacciSequence = fibonacciSequence;
+    }
+
+    public List<Integer> getFibonacciSequence() {
         return this.fibonacciSequence;
     }
 
     public void countSequnce() {
-        int f;
-        for (int i = 0; i < this.sequenceLength; i++) {
-            if (i == 0) {
-                f = 0;
-            } else if (i == 1) {
-                f = 1;
-            } else {
-                f = this.fibonacciSequence.get(i - 2) + this.fibonacciSequence.get(i - 1);
+        if (check()) {
+            int f;
+            for (int i = 0; i < this.sequenceLength; i++) {
+                if (i == 0) {
+                    f = 0;
+                } else if (i == 1) {
+                    f = 1;
+                } else {
+                    f = this.fibonacciSequence.get(i - 2) + this.fibonacciSequence.get(i - 1);
+                }
+                this.fibonacciSequence.add(i, f);
             }
-            this.fibonacciSequence.add(i, f);
+        } else {
+            System.err.println("[Error] Null member!");
+        }
+
+    }
+
+    private Boolean check() {
+        if (null == fibonacciSequence || null == sequenceLength) {
+            return false;
+        } else {
+            return true;
         }
     }
 
-    public void printSequence(){
-        if(!this.fibonacciSequence.isEmpty()){
-            for(int f:this.fibonacciSequence){
+    public void printSequence() {
+        if (!this.fibonacciSequence.isEmpty()) {
+            for (int f : this.fibonacciSequence) {
                 System.out.println(f);
             }
         }

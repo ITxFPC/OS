@@ -1,6 +1,6 @@
 package itxfpc.model;
 
-import main.java.itxfpc.model.Fibonacci;
+
 
 public class FibonacciRun extends Fibonacci implements Runnable {
 
@@ -16,7 +16,6 @@ public class FibonacciRun extends Fibonacci implements Runnable {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
-        
+        this.countSequnce();
     }
 }
