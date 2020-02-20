@@ -4,8 +4,6 @@ package itxfpc.model;
 
 import org.junit.Test;
 
-import main.java.itxfpc.model.Fibonacci;
-
 
 
 public class FibonacciTest{
