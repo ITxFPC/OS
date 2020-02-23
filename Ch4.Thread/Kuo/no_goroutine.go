@@ -11,7 +11,7 @@ func withdraw1() {
 	time.Sleep(3000 * time.Millisecond)
 	balance -= 1000
 	money1 = balance
-	fmt.Println("After withdrawing $1000, balace: ", money1)
+	fmt.Println("After withdrawing $1000, balance: ", money1)
 	wg1.Done()
 }
 

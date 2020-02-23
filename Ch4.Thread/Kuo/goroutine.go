@@ -15,7 +15,7 @@ func withdraw() {
     money = balance
     // 釋放lock的變數
     mu.Unlock()
-    fmt.Println("After withdrawing $1000, balace: ", money)
+    fmt.Println("After withdrawing $1000, balance: ", money)
     wg.Done()
 }
 
