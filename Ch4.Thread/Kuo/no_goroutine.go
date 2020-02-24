@@ -18,6 +18,7 @@ func withdraw1() {
 var wg1 sync.WaitGroup
 var money1 = 1500
 
+/*
 func main() {
 	fmt.Println("We have $1500")
 	wg1.Add(2)
@@ -25,3 +26,4 @@ func main() {
 	go withdraw1() // second withdraw
 	wg1.Wait()
 }
+ */
