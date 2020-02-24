@@ -6,7 +6,7 @@ public class FibonacciThread extends Thread {
     private Integer sequenceLength;
     private ArrayList<Integer> fibonacciSequence;
 
-    FibonacciThread(Integer sequenceLength, ArrayList<Integer> fibonacciSequence) {
+    public FibonacciThread(Integer sequenceLength, ArrayList<Integer> fibonacciSequence) {
         this.sequenceLength = sequenceLength;
         this.fibonacciSequence = fibonacciSequence;
     }
