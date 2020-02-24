@@ -20,9 +20,10 @@ func withdraw() {
 }
 
 var wg sync.WaitGroup
-var money int = 1500
+var money = 1500
 var mu sync.Mutex
 
+/*
 func main() {
     fmt.Println("We have $1500")
     wg.Add(2)
@@ -30,3 +31,4 @@ func main() {
     go withdraw() // second withdraw
     wg.Wait()
 }
+ */
