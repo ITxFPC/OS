@@ -45,6 +45,7 @@ public class Fibonacci {
     public void countSequnce() {
         if (check()) {
             int f;
+            this.fibonacciSequence.clear();
             for (int i = 0; i < this.sequenceLength; i++) {
                 if (i == 0) {
                     f = 0;
@@ -72,7 +73,7 @@ public class Fibonacci {
     public void printSequence() {
         if (!this.fibonacciSequence.isEmpty()) {
             for (int f : this.fibonacciSequence) {
-                System.out.println(f);
+                System.out.print(f+", ");
             }
         }
     }
