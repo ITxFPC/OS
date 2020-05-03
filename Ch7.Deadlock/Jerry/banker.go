@@ -9,11 +9,11 @@ import (
 )
 
 func main() {
-	available, err := readCsv("test-data/max.csv")
+	max, err := readCsv("test-data/max.csv")
 	if err != nil{
 		logrus.Error(err)
 	}
-	fmt.Println(available)
+	fmt.Println(max)
 }
 
 func readCsv (filename string) ([][]uint64, error)  {
@@ -23,19 +23,21 @@ func readCsv (filename string) ([][]uint64, error)  {
 	}
 	defer f.Close()
 
-	lines, err := csv.NewReader(f).ReadAll()
-	if err != nil {
-		return nil, err
+	lines, cErr := csv.NewReader(f).ReadAll()
+	if cErr != nil {
+		return nil, cErr
 	}
-	result := make([][]uint64,0,100)
+	result := make([][]uint64, len(lines))
+	for i := 0; i < len(lines); i++ {
+		result[i] = make([]uint64, len(lines))
+	}
 	for i, line := range lines {
 		for j, l := range line {
 			valUint, err := strconv.ParseUint(l,10,64)
 			if err != nil {
 				return nil, err
 			}
-			fmt.Println(valUint,i,j)
-			result[i][j]= valUint
+			result[i][j] = valUint
 		}
 	}
 	return result, nil
